@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #004080;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px 20px;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#logo-img {
+  height: 50px;
+  border-radius: 5px;
+}
+
+nav h1 {
+  font-size: 1.2rem;
+  margin-left: 10px;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffd700;
+}
+
+main {
+      padding: 60px;
+    }
+
+        h2 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .filter-buttons button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .filter-buttons button:hover {
+      background-color: #0066cc;
+    }
+
+    .filter-buttons button.active {
+      background-color: #0066cc;
+      transform: scale(1.05);
+    }
+
+    .notice {
+      background: #fff;
+      border-left: 5px solid #004080;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .notice:hover {
+      background-color: #e3f2fd;
+      box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
+    }
+
+    .notice-date {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .notice-title {
+      margin-top: 5px;
+      font-size: 1.2em;
+      color: #004080;
+    }
+
+    .notice-content {
+      margin-top: 10px;
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .notice img {
+      display: none;
+      margin-top: 15px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .notice.active img {
+      display: block;
+    }

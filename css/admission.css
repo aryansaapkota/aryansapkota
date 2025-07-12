@@ -1,0 +1,158 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #004080;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px 20px;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#logo-img {
+  height: 50px;
+  border-radius: 5px;
+}
+
+nav h1 {
+  font-size: 1.2rem;
+  margin-left: 10px;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffd700;
+}
+
+/* Main Container */
+main.contact-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Headings */
+main h2 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+main h3 {
+  color: #004080;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+/* Intro Text */
+.intro-text {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Lists */
+.info-list {
+  list-style: disc inside;
+  margin-left: 20px;
+  color: #444;
+}
+
+.info-list li {
+  margin-bottom: 10px;
+}
+
+/* Form Styles */
+form.admissions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+form label {
+  font-weight: bold;
+  color: #333;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #004080;
+  outline: none;
+}
+
+/* File Input */
+input[type="file"] {
+  padding: 8px;
+}
+
+/* Submit Button */
+form button[type="submit"] {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0066cc;
+  transform: scale(1.03);
+}

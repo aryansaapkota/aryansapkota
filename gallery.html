@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image Gallery</title>
+
+   <link rel="icon" href="image/logo.jpg" type="image/x-icon" />
+   
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+
+ <nav class="navbar" aria-label="Main Navigation">
+    <div class="logo">
+      <a href="college.html" aria-label="College Home">
+        <img src="image/logo.jpg" alt="College Logo" id="logo-img" />
+      </a>
+      <h1>Dhaulagiri Deaf Residential Secondary School</h1>
+    </div>
+
+    <div class="nav-links" role="navigation" aria-label="Primary">
+      <a href="college.html">Home</a>
+      <a href="Admission.html">Admission</a>
+      <a href="Notice.html">Notice</a>
+      <a href="Gallery.html"class="active" aria-current="page">Gallery</a>
+      <a href="Contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <h2>Gallery</h2>
+
+  <div class="full-img" id="fullImgBox" onclick="closeFullImg()">
+    <span class="arrow left" id="prevBtn" onclick="event.stopPropagation(); showPrev()"></span>
+    <img src="" id="fullImg" alt="Full View" onclick="event.stopPropagation()" />
+    <span class="arrow right" id="nextBtn" onclick="event.stopPropagation(); showNext()"></span>
+    <span class="close-btn" onclick="event.stopPropagation(); closeFullImg()">×</span>
+  </div>
+
+  <div class="img-gallery" id="imgGallery">
+    <img src="image/img1.jpeg" alt="img1" />
+    <img src="image/img2.jpg" alt="img2" />
+    <img src="image/img3.jpg" alt="img3" />
+    <img src="image/img4.jpg" alt="img4" />
+    <img src="image/img5.jpg" alt="img5" />
+    <img src="image/img6.jpg" alt="img6" />
+    <img src="image/img7.jpg" alt="img7" />
+    <img src="image/img8.jpg" alt="img8" />
+    <img src="image/img9.jpg" alt="img9" />
+    <img src="image/img10.jpg" alt="img10" />
+    <img src="image/img11.jpg" alt="img11" />
+    <img src="image/img12.jpg" alt="img12" />
+    <img src="image/img13.jpg" alt="img13" />
+    <img src="image/img14.jpg" alt="img14" />
+    <img src="image/img15.jpg" alt="img15" />
+    <img src="image/img16.jpg" alt="img16" />
+    <img src="image/img17.jpg" alt="img17" />
+    <img src="image/img18.jpg" alt="img18" />
+    <img src="image/img19.jpg" alt="img19" />
+    <img src="image/img20.jpg" alt="img20" />
+    <img src="image/img21.jpg" alt="img21" />
+  </div>
+
+<script>
+  const fullImgBox = document.getElementById("fullImgBox");
+  const fullImg = document.getElementById("fullImg");
+  const galleryImages = document.querySelectorAll(".img-gallery img");
+
+  let currentIndex = -1;
+
+  // Open full image by index
+  function openFullImgByIndex(index) {
+    currentIndex = index;
+    fullImg.src = galleryImages[currentIndex].src;
+    fullImgBox.style.display = "flex";
+  }
+
+  // Open full image by src (called on click)
+  function openFullImg(src) {
+    galleryImages.forEach((img, i) => {
+      if (img.src === src) {
+        openFullImgByIndex(i);
+      }
+    });
+  }
+
+  // Close full image viewer
+  function closeFullImg() {
+    fullImgBox.style.display = "none";
+    fullImg.src = "";
+    currentIndex = -1;
+  }
+
+  // Show previous image
+  function showPrev() {
+    if (currentIndex > 0) {
+      openFullImgByIndex(currentIndex - 1);
+    } else {
+      openFullImgByIndex(galleryImages.length - 1);
+    }
+  }
+
+  // Show next image
+  function showNext() {
+    if (currentIndex < galleryImages.length - 1) {
+      openFullImgByIndex(currentIndex + 1);
+    } else {
+      openFullImgByIndex(0);
+    }
+  }
+
+  // Add click listeners to thumbnails
+  galleryImages.forEach((img, i) => {
+    img.addEventListener("click", () => openFullImgByIndex(i));
+  });
+
+  // Optional: Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (fullImgBox.style.display === "flex") {
+      if (e.key === "ArrowLeft") {
+        showPrev();
+      } else if (e.key === "ArrowRight") {
+        showNext();
+      } else if (e.key === "Escape") {
+        closeFullImg();
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

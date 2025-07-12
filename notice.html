@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College Notice Board | Dhaulagiri Deaf Residential Secondary School</title>
+  <link rel="icon" href="image/logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="css/notice.css" />
+
+</head>
+<body>
+
+ <nav class="navbar" aria-label="Main Navigation">
+    <div class="logo">
+      <a href="college.html" aria-label="College Home">
+        <img src="image/logo.jpg" alt="College Logo" id="logo-img" />
+      </a>
+      <h1>Dhaulagiri Deaf Residential Secondary School</h1>
+    </div>
+
+    <div class="nav-links" role="navigation" aria-label="Primary">
+      <a href="college.html">Home</a>
+      <a href="Admission.html">Admission</a>
+      <a href="Notice.html" class="active" aria-current="page">Notice</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main id="notice-board">
+    <h2>📌 College Notice Board</h2>
+
+    <div class="filter-buttons" role="group" aria-label="Filter Notices">
+      <button class="active" type="button" onclick="filterNotices('all', this)">All</button>
+      <button type="button" onclick="filterNotices('admission', this)">Admission</button>
+      <button type="button" onclick="filterNotices('program', this)">Program</button>
+      <button type="button" onclick="filterNotices('holiday', this)">Holiday</button>
+      <button type="button" onclick="filterNotices('result', this)">Result</button>
+    </div>
+
+    <article class="notice admission" tabindex="0" aria-label="Admission Notice dated June 15, 2025">
+      <time class="notice-date" datetime="2025-06-15">June 15, 2025</time>
+      <h3 class="notice-title">📝 Admission Open</h3>
+      <p class="notice-content">
+        Admission for the academic year 2025-2026 is now open. Visit the admission portal or contact the office for more details.
+      </p>
+      <img src="image/notice/admission.jpg" alt="Admission Notice Poster" />
+    </article>
+
+    <article class="notice program" tabindex="0" aria-label="Orientation Program Notice dated June 20, 2025">
+      <time class="notice-date" datetime="2025-06-20">June 20, 2025</time>
+      <h3 class="notice-title">🎓 Orientation Program for New Students</h3>
+      <p class="notice-content">
+        An orientation program will be held on June 25th at the auditorium hall for all first-year students. Attendance is mandatory.
+      </p>
+      <img src="image/college.jpeg" alt="Orientation Program Image" />
+    </article>
+
+    <article class="notice holiday" tabindex="0" aria-label="Holiday Notice dated October 1, 2025">
+      <time class="notice-date" datetime="2025-10-01">October 1, 2025</time>
+      <h3 class="notice-title">🎉 College Closed for Dashain, Tihar & Chhath Puja Holidays</h3>
+      <p class="notice-content">
+        The college will remain closed from <strong>October 1</strong> to <strong>October 31, 2025</strong> in observance of the major festivals: Dashain, Tihar, and Chhath Puja.<br />
+        Regular classes will resume from <strong>November 1, 2025</strong>.
+      </p>
+      <img src="image/notice/holiday.jpg" alt="Holiday Notice Poster" />
+    </article>
+
+    <article class="notice result" tabindex="0" aria-label="Result Notice dated June 25, 2025">
+      <time class="notice-date" datetime="2025-06-25">June 25, 2025</time>
+      <h3 class="notice-title">📢 Semester Exam Results Announced</h3>
+      <p class="notice-content">
+        Results are now available at the admin office or through the college portal. Login with your student ID to view.
+      </p>
+      <img src="image/notice/Result.jpg" alt="Semester Exam Results" />
+    </article>
+  </main>
+
+  <script>
+    // Filter and toggle active class on notices & buttons
+    const notices = document.querySelectorAll('article.notice');
+    const filterButtons = document.querySelectorAll('.filter-buttons button');
+
+    notices.forEach(notice => {
+      notice.addEventListener('click', () => {
+        notices.forEach(n => n.classList.remove('active'));
+        notice.classList.add('active');
+      });
+      // Allow keyboard toggle with Enter or Space
+      notice.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          notices.forEach(n => n.classList.remove('active'));
+          notice.classList.add('active');
+        }
+      });
+    });
+
+    function filterNotices(category, button) {
+      notices.forEach(notice => {
+        if (category === 'all' || notice.classList.contains(category)) {
+          notice.style.display = 'block';
+        } else {
+          notice.style.display = 'none';
+          notice.classList.remove('active');
+        }
+      });
+
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
